@@ -13,14 +13,13 @@ namespace sigmamodtemplate
             "LCKWallCameraSpawner"
         };
 
-        private void DisableTargetObjects()
+        private void disable()
         {
             foreach (GameObject obj in Resources.FindObjectsOfTypeAll<GameObject>())
             {
                 if (obj.activeInHierarchy && MatchesTargetName(obj.name))
                 {
                     obj.SetActive(false);
-                    Debug.Log($"Disabled object: {obj.name}");
                 }
             }
         }
@@ -35,18 +34,17 @@ namespace sigmamodtemplate
                     return true;
                 }
             }
-            return false;
-        }
+                return false;
+        	}
 
-        void Start()
+        	void Start()
 		{
-            HarmonyPatches.ApplyHarmonyPatches();
 			GorillaTagger.OnPlayerSpawned(Initialized);
 		}
 
 		void Initialized()
 		{
-            DisableTargetObjects();
-        }
+           	 disable();
+        	}
 	}
 }
