@@ -30,7 +30,7 @@ namespace sigmamodtemplate
             name = name.ToLower();
             foreach (string targetName in targetNames)
             {
-                if (name == targetName.ToLower()) // Match exact names
+                if (name == targetName.ToLower()) 
                 {
                     return true;
                 }
