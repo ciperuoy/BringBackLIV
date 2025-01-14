@@ -13,13 +13,13 @@ namespace sigmamodtemplate
             "LCKWallCameraSpawner"
         };
 
-        private void disable()
+        private void donothingwithlivatall()
         {
             foreach (GameObject obj in Resources.FindObjectsOfTypeAll<GameObject>())
             {
                 if (obj.activeInHierarchy && MatchesTargetName(obj.name))
                 {
-                    obj.SetActive(false);
+		Debug.Log("doing nothing with liv...");
                 }
             }
         }
@@ -44,7 +44,7 @@ namespace sigmamodtemplate
 
 		void Initialized()
 		{
-           	 disable();
+           	 donothingwithlivatall();
         	}
 	}
 }
